@@ -11,5 +11,5 @@ $app['debug'] = true;
 *	@usage true or false
 */
 $app['reverse_proxy'] = false;
-$app['reverse_proxy_ip'] = "127.0.0.1";
+$app['reverse_proxy_ip'] = "";
  ?>
