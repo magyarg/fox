@@ -9,6 +9,13 @@ $app['site_title'] = "Fox Application Platform";
 *	@usage true or false
 */
 $app['debug'] = true;
+
+/**
+*	Default timezone
+*	@usage Add your timezone as a parameter
+*/
+date_default_timezone_set('Europe/Budapest');
+
 /**
 *	If your application is hosted behind a reverse proxy and
 *	you want the framework to trust the X-Forwarded headers

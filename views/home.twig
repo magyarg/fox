@@ -3,12 +3,19 @@
 {% block content %}
 	{% for post in posts %}
 		<article>
-			<h3>{{ post.title }}</h3>
+			<h3 class="w200">{{ post.title }}</h3>
+			<i class="mdi-action-alarm"> {{ post.created_at }} </i> 
+			<i class="mdi-action-face-unlock"> {{ post.author_id }} </i>
+			<i class="mdi-action-label-outline"> {{ post.category_id }} </i>
+			<i class="mdi-maps-place"> {{ post.location }} </i>
 			<p>
 				{{ post.content }}
+				<p>
+					<a href="{{ app.url_generator.generate('post', {id: post.id}) }}">Tovább olvasom</a>
+				</p>
 			</p>
 		</article>
 	{% else %}
-
+		Nincs elérhető bejegyzés!
 	{% endfor %}
 {% endblock %}

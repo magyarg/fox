@@ -1,0 +1,17 @@
+{% extends "layouts/default.twig" %}
+
+{% block content %}
+	<article>
+		<h3 class="w200">A(z) {{ post.title }} olvasása</h3>
+		<i class="mdi-action-alarm"> {{ post.created_at }} </i> 
+		<i class="mdi-action-face-unlock"> {{ post.author_id }} </i>
+		<i class="mdi-action-label-outline"> {{ post.category_id }} </i>
+		<i class="mdi-maps-place"> {{ post.location }} </i>
+		<p>
+			{{ post.content }}
+			<p>
+				<a href="{{ app.url_generator.generate('home') }}">Vissza</a>
+			</p>
+		</p>
+	</article>
+{% endblock %}

@@ -13,6 +13,7 @@ require_once '../vendor/autoload.php';
 *	the anatomy of the framework!
 */
 require '../models/Post.php';
+require '../models/Page.php';
 
 /**
 *	Database layer connection

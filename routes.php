@@ -28,6 +28,25 @@ $app->get('/', function () use ($app) {
 */
 $app->get('/page/{id}', function($id) use ($app)
 {
+	$page = Pages::find($id);
 
-});
+	return $app['twig']->render('page.twig', array(
+		'page' => $page,
+	));
+})->bind('page');
+
+/**
+*	Show post
+*	@param 	$app(Instance), $id (int)
+*	@return array
+*/
+$app->get('/post/{id}', function($id) use ($app)
+{
+	$post = Posts::find($id);
+
+	return $app['twig']->render('post.twig', array(
+		'post' => $post,
+	));
+})->bind('post');
+
  ?>
