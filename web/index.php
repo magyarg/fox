@@ -8,16 +8,30 @@ ini_set('display_errors', 'on');
 require_once '../vendor/autoload.php';
 
 /**
+*	Model implementation
+*	@usage   Do NOT edit this section, it affects to 
+*	the anatomy of the framework!
+*/
+require '../models/Post.php';
+
+/**
 *	Database layer connection
 *	@usage   Fill the conection credentials
 *	@todo	 Will be separated into a standalone file
 */
-try {
-	$dbh = new PDO('mysql:host=localhost;dbname=fox', 'root', 'root');
-
-} catch (PDOException $e) {
-	print "Error: " . $e->getMessage() . "<br />";
-}
+use Illuminate\Database\Capsule\Manager as Capsule;
+$capsule = new Capsule;
+$capsule->addConnection(array(
+	'driver' 	=> 'mysql',
+	'host'	 	=> 'localhost',
+	'database'	=> 'fox',
+	'username'	=> 'root',
+	'password'	=> 'root',
+	'charset'	=> 'utf8',
+	'collation' => 'utf8_unicode_ci',
+	'prefix'	=> ''
+));
+$capsule->bootEloquent();
 
 /**
 *	Silex init and callin config files and routes

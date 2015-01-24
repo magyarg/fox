@@ -1,0 +1,6 @@
+{% extends "layouts/default.twig" %}
+{% block content %}
+	{% for page in pages %}
+		{{ page.title }}
+	{% endfor %}
+{% endblock %}

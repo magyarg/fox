@@ -2,7 +2,12 @@
 
 {% block content %}
 	{% for post in posts %}
-		<h3>{{ post.title }}</h3>
+		<article>
+			<h3>{{ post.title }}</h3>
+			<p>
+				{{ post.content }}
+			</p>
+		</article>
 	{% else %}
 
 	{% endfor %}
